@@ -586,11 +586,16 @@ export default function HomePage() {
 
               <div className="hero-visual">
                 <div className="hero-image-card">
+                  <div className="hero-floating-badge">
+                    <span className="badge-star">★</span>
+                    <span className="badge-rating">4.9/5</span>
+                    <span className="badge-text">Clinical Scalp Studies</span>
+                  </div>
                   <img src="/images/sajad_elixir.jpg" alt="Sajad Hygam Hair Regrowth Elixir Bottle" />
                   <div className="hero-card-footer">
                     <div className="verified-pill">
                       <span className="check-icon">✓</span>
-                      <span>Handcrafted by Sajad Hygam • 18,400+ Clients Restored</span>
+                      <span>Handcrafted by Sajad Hygam • 18,400+ Restored Patients</span>
                     </div>
                   </div>
                 </div>
@@ -870,8 +875,12 @@ export default function HomePage() {
       ></div>
       <aside className={`cart-drawer ${isCartOpen ? 'open' : ''}`} id="cart-drawer" aria-label="Shopping Cart">
         <div className="cart-drawer-header">
-          <div className="cart-drawer-title">🛒 Your Treatment Bag</div>
-          <button className="close-btn" onClick={() => setIsCartOpen(false)}>✕</button>
+          <div className="cart-drawer-title">
+            <span className="cart-header-icon">🛍️</span>
+            <span>Your Treatment Bag</span>
+            {totalCartCount > 0 && <span className="cart-header-badge">{totalCartCount}</span>}
+          </div>
+          <button className="close-btn" onClick={() => setIsCartOpen(false)} aria-label="Close Cart">✕</button>
         </div>
 
         <div className="shipping-progress-box">
@@ -891,14 +900,15 @@ export default function HomePage() {
 
         <div className="cart-items-container" id="cart-items-container">
           {cart.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '40px 20px', color: '#64748b' }}>
-              <p>Your bag is empty.</p>
+            <div className="cart-empty-state">
+              <div className="cart-empty-icon">🌿</div>
+              <h4>Your bag is currently empty</h4>
+              <p>Start your hair restoration journey today with our clinically-tested botanical remedies.</p>
               <button
                 className="btn-solid-dark"
-                style={{ marginTop: '14px' }}
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Formulas
+                Explore Formulas ➔
               </button>
             </div>
           ) : (
@@ -911,18 +921,30 @@ export default function HomePage() {
                     <img src={p.image} alt={p.title} />
                   </div>
                   <div className="cart-item-details">
-                    <div className="cart-item-title">{p.title}</div>
-                    <div className="cart-item-meta">{p.size}</div>
-                    <div className="cart-item-price">₹{p.price.toLocaleString('en-IN')}</div>
-                    <div className="cart-item-controls">
-                      <div className="qty-picker">
-                        <button className="qty-btn" onClick={() => updateQuantity(p.id, -1)}>−</button>
-                        <span className="qty-val">{item.quantity}</span>
-                        <button className="qty-btn" onClick={() => updateQuantity(p.id, 1)}>+</button>
-                      </div>
-                      <button className="remove-item-btn" onClick={() => removeFromCart(p.id)}>
-                        Remove
+                    <div className="cart-item-header">
+                      <div className="cart-item-title">{p.title}</div>
+                      <button
+                        className="remove-item-btn"
+                        onClick={() => removeFromCart(p.id)}
+                        title="Remove item"
+                        aria-label="Remove item"
+                      >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
                       </button>
+                    </div>
+                    <div className="cart-item-meta">{p.size}</div>
+                    <div className="cart-item-footer">
+                      <div className="qty-picker">
+                        <button className="qty-btn" onClick={() => updateQuantity(p.id, -1)} aria-label="Decrease quantity">−</button>
+                        <span className="qty-val">{item.quantity}</span>
+                        <button className="qty-btn" onClick={() => updateQuantity(p.id, 1)} aria-label="Increase quantity">+</button>
+                      </div>
+                      <div className="cart-item-price">
+                        ₹{(p.price * item.quantity).toLocaleString('en-IN')}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -951,14 +973,16 @@ export default function HomePage() {
               <span id="cart-subtotal">₹{subtotal.toLocaleString('en-IN')}</span>
             </div>
             {discount > 0 && (
-              <div className="cart-totals-row" id="cart-discount-row" style={{ color: '#166534' }}>
+              <div className="cart-totals-row discount-row">
                 <span>Discount ({appliedCoupon}):</span>
                 <span id="cart-discount-val">−₹{discount.toLocaleString('en-IN')}</span>
               </div>
             )}
             <div className="cart-totals-row">
               <span>Express Shipping:</span>
-              <span id="cart-shipping-val">{shipping === 0 ? 'FREE' : `₹${shipping}`}</span>
+              <span className="shipping-badge" id="cart-shipping-val">
+                {shipping === 0 ? 'FREE' : `₹${shipping}`}
+              </span>
             </div>
             <div className="cart-totals-row final">
               <span>Total:</span>
@@ -979,17 +1003,29 @@ export default function HomePage() {
               setIsCheckoutOpen(true);
             }}
           >
-            Proceed to Checkout ➔
+            <span>Proceed to Checkout</span>
+            <span className="btn-checkout-arrow">➔</span>
           </button>
 
           <a
             href="https://wa.me/917889964048?text=Hello%20Sajad,%20I%20have%20questions%20about%20ordering%20the%20hair%20treatment."
             target="_blank"
             rel="noopener noreferrer"
-            style={{ textAlign: 'center', fontSize: '0.75rem', color: '#4b5563', display: 'block', marginTop: '4px' }}
+            className="cart-wa-order-btn"
           >
-            💬 Or Order Directly via WhatsApp (+91 7889964048)
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.055-1.579-.333-.997-.412-1.637-.996-2.146-1.505-.51-.51-1.093-1.15-1.505-2.146-.388-.945-.378-1.267-.333-1.579.05-.333.419-1.026.824-1.17.133-.048.271-.023.367.072.102.101.524 1.26.571 1.393.047.133.023.28-.052.378-.076.098-.142.164-.23.26-.089.096-.184.2-.072.396.113.196.505.832 1.082 1.346.745.663 1.373.868 1.569.966.196.098.31.082.426-.052.115-.133.493-.573.626-.77.133-.196.265-.164.444-.098.178.066 1.13.533 1.325.63.196.098.327.147.375.23.048.082.048.477-.096.882zM12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.05 22l5.176-1.332A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+            </svg>
+            <span>Or Order Directly via WhatsApp</span>
           </a>
+
+          <div className="cart-trust-badges">
+            <span className="cart-trust-item">🔒 100% Secure</span>
+            <span className="cart-trust-dot">•</span>
+            <span className="cart-trust-item">⚡ Express Dispatch</span>
+            <span className="cart-trust-dot">•</span>
+            <span className="cart-trust-item">🌿 100% Herbal</span>
+          </div>
         </div>
       </aside>
 
