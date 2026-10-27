@@ -864,15 +864,113 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Section 4: Verified Patient Transformations Marquee */}
+        {/* Section 4: Verified Patient Transformations & Clinical Proof */}
         <section className="reviews-section" id="reviews">
           <div className="container">
             <div className="section-heading-box">
               <span className="section-tag">VERIFIED TRANSFORMATIONS</span>
-              <h2 className="section-title">What Real Patients Say</h2>
+              <h2 className="section-title">Clinical Results &amp; Real Transformations</h2>
               <p className="section-subtitle">
-                Authentic experiences from men and women across India who restored their scalp with Sajad Hygam.
+                Documented 90-day photographic proof and real reviews from men and women across India who restored their scalp with Sajad Hygam.
               </p>
+            </div>
+
+            {/* Featured 90-Day Clinical Transformation Card */}
+            <div className="clinical-transformation-card">
+              {/* Left Column: Prominent Before & After Visual */}
+              <div className="clinical-image-col">
+                <div className="transformation-image-wrapper">
+                  <img 
+                    src="/images/before_after.jpg" 
+                    alt="Sajad Hygam 90-Day Clinical Hair Restoration Before: Day 1 and After: Day 90"
+                    className="transformation-img"
+                    loading="lazy"
+                  />
+                  <div className="transformation-overlay-badge">
+                    <span className="badge-pulse-dot"></span>
+                    <span>90-Day Clinical Regrowth Protocol</span>
+                  </div>
+                </div>
+
+                <div className="transformation-image-caption">
+                  <div className="caption-item before">
+                    <span className="caption-tag">DAY 1</span>
+                    <span className="caption-desc">Severe crown thinning &amp; dormant follicles</span>
+                  </div>
+                  <div className="caption-divider">➔</div>
+                  <div className="caption-item after">
+                    <span className="caption-tag">DAY 90</span>
+                    <span className="caption-desc">Dense crown regrowth &amp; restored scalp coverage</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Clinical Milestones & Patient Story */}
+              <div className="clinical-info-col">
+                <div className="clinical-badge-row">
+                  <span className="clinical-verified-badge">✓ Documented Case Study</span>
+                  <span className="clinical-timeline-badge">🌿 100% Botanical Actives</span>
+                </div>
+
+                <h3 className="clinical-card-title">
+                  Visible Crown Density &amp; Follicle Reactivation in 90 Days
+                </h3>
+
+                <p className="clinical-card-desc">
+                  Documented follicle progression using the complete Sajad Hygam botanical regimen. Kashmiri walnut bark, stinging nettle, and bioactive botanical oils stimulate micro-circulation and calm local DHT without chemical dependency or shedding cycles.
+                </p>
+
+                {/* 3 Compact Clinical Milestone Stats */}
+                <div className="clinical-metrics-grid">
+                  <div className="metric-box">
+                    <div className="metric-val">Day 14</div>
+                    <div className="metric-lbl">Excessive Shedding Halted</div>
+                  </div>
+                  <div className="metric-box">
+                    <div className="metric-val">94.2%</div>
+                    <div className="metric-lbl">Root Strength Increase</div>
+                  </div>
+                  <div className="metric-box">
+                    <div className="metric-val">Day 90</div>
+                    <div className="metric-lbl">Full Terminal Regrowth</div>
+                  </div>
+                </div>
+
+                {/* Patient Testimonial Quote */}
+                <div className="clinical-quote-box">
+                  <div className="quote-stars">★★★★★</div>
+                  <p className="quote-text">
+                    &ldquo;Within 40 days, fine baby hairs started filling up my crown thinning area. By month 3, the coverage was so dense that my family was stunned. No minoxidil, no chemicals, no side effects.&rdquo;
+                  </p>
+                  <div className="quote-author">
+                    <strong>Tariq M., 34</strong> &bull; Srinagar, Kashmir &bull; <span className="verified-pill">Verified Protocol Patient</span>
+                  </div>
+                </div>
+
+                {/* CTA Action Group */}
+                <div className="clinical-action-row">
+                  <button 
+                    type="button" 
+                    className="btn-start-protocol"
+                    onClick={() => addToCart('sh-bundle-all', 1)}
+                  >
+                    <span>Start 90-Day Regrowth Protocol</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </button>
+                  <a href="#products" className="link-view-formula">
+                    Explore All Formulations
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Marquee Header Divider */}
+            <div className="marquee-header-strip">
+              <span className="marquee-strip-title">More Verified Patient Feedback Across India</span>
+              <div className="marquee-strip-stars">★★★★★ 4.9 / 5.0 Rating (680+ Verified Reviews)</div>
             </div>
           </div>
 

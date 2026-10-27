@@ -1153,6 +1153,314 @@ textarea:focus {
   overflow: hidden;
 }
 
+/* ==========================================================================
+   Featured 90-Day Clinical Transformation Card (Aesop / Botanical Aesthetic)
+   ========================================================================== */
+.clinical-transformation-card {
+  display: grid;
+  grid-template-columns: 1.18fr 1fr;
+  gap: 36px;
+  background: #ffffff;
+  border: 1px solid rgba(27, 56, 43, 0.12);
+  border-radius: 24px;
+  padding: 32px;
+  margin: 36px 0 48px;
+  box-shadow: 0 16px 40px -12px rgba(27, 56, 43, 0.08);
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clinical-transformation-card:hover {
+  box-shadow: 0 24px 50px -12px rgba(27, 56, 43, 0.12);
+}
+
+.clinical-image-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.transformation-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f1f5f3;
+  border: 1px solid rgba(27, 56, 43, 0.1);
+  box-shadow: 0 8px 24px -6px rgba(27, 56, 43, 0.1);
+}
+
+.transformation-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.transformation-image-wrapper:hover .transformation-img {
+  transform: scale(1.02);
+}
+
+.transformation-overlay-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(27, 56, 43, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FAF7F2;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.badge-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #52B788;
+  box-shadow: 0 0 8px #52B788;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.transformation-image-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #FAF7F2;
+  border: 1px solid rgba(27, 56, 43, 0.08);
+  border-radius: 14px;
+  padding: 12px 18px;
+}
+
+.caption-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.caption-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #1B382B;
+}
+
+.caption-desc {
+  font-size: 0.78rem;
+  color: #5A6A61;
+  line-height: 1.35;
+}
+
+.caption-divider {
+  font-size: 1.1rem;
+  color: #1B382B;
+  opacity: 0.6;
+  padding: 0 4px;
+}
+
+/* Info Column */
+.clinical-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.clinical-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.clinical-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #1B382B;
+  background: rgba(27, 56, 43, 0.08);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.clinical-timeline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #386641;
+  background: rgba(82, 183, 136, 0.14);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.clinical-card-title {
+  font-family: var(--font-playfair, 'Playfair Display', serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.28;
+  color: #1B382B;
+  margin-bottom: 14px;
+}
+
+.clinical-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #4A5751;
+  margin-bottom: 20px;
+}
+
+.clinical-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.metric-box {
+  background: #FAF7F2;
+  border: 1px solid rgba(27, 56, 43, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.metric-val {
+  font-family: var(--font-playfair, 'Playfair Display', serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1B382B;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.metric-lbl {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #5A6A61;
+  line-height: 1.25;
+}
+
+.clinical-quote-box {
+  background: #FDFBF7;
+  border-left: 3px solid #1B382B;
+  border-radius: 0 12px 12px 0;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+
+.quote-stars {
+  color: #DDA15E;
+  font-size: 0.88rem;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.quote-text {
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: #2D3A34;
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.76rem;
+  color: #6B7C72;
+}
+
+.verified-pill {
+  color: #1B382B;
+  font-weight: 700;
+}
+
+.clinical-action-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-start-protocol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #1B382B;
+  color: #FAF7F2;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 13px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px -4px rgba(27, 56, 43, 0.35);
+  text-decoration: none;
+}
+
+.btn-start-protocol:hover {
+  background-color: #14281E;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -4px rgba(27, 56, 43, 0.45);
+}
+
+.link-view-formula {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1B382B;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.link-view-formula:hover {
+  opacity: 0.75;
+}
+
+/* Marquee Header Divider Strip */
+.marquee-header-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(27, 56, 43, 0.1);
+  margin-bottom: 12px;
+}
+
+.marquee-strip-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #1B382B;
+  text-transform: uppercase;
+}
+
+.marquee-strip-stars {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5A6A61;
+}
+
 .marquee-wrapper {
   width: 100%;
   overflow: hidden;
@@ -2943,7 +3251,71 @@ textarea:focus {
   }
 
   .reviews-section {
-    padding: 60px 0;
+    padding: 50px 0 60px;
+  }
+
+  /* Clinical Transformation Card Mobile */
+  .clinical-transformation-card {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+    padding: 18px !important;
+    margin: 24px 0 36px !important;
+    border-radius: 18px !important;
+  }
+
+  .transformation-image-caption {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 12px 14px !important;
+  }
+
+  .caption-divider {
+    display: none !important;
+  }
+
+  .clinical-card-title {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .clinical-card-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .clinical-metrics-grid {
+    gap: 8px !important;
+  }
+
+  .metric-box {
+    padding: 10px 8px !important;
+  }
+
+  .metric-val {
+    font-size: 1.18rem !important;
+  }
+
+  .metric-lbl {
+    font-size: 0.68rem !important;
+  }
+
+  .clinical-action-row {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .btn-start-protocol {
+    width: 100% !important;
+    padding: 14px 20px !important;
+  }
+
+  .marquee-header-strip {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
   }
 
   .review-card {
