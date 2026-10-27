@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  
+  <title>Sajad Hygam | Botanical Hair Restoration & Scalp Science</title>
+  <meta name="title" content="Sajad Hygam | Botanical Hair Restoration & Scalp Science" />
+  <meta name="description" content="Botanical hair restoration formulations by Sajad Hygam. Cold-pressed active rosemary, black seed oil, and DHT blockers that halt hair loss and restore roots naturally." />
+
+  <!-- Traya & Editorial Fonts: Nunito Sans + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Subtle & Clean) -->
+  <div class="announcement-bar" id="announcement">
+    <div class="announcement-inner">
+      <span class="announcement-desktop-text hide-mobile">🌿 100% Botanical Extracts • No Minoxidil Dependency • Code <strong>GROWTH15</strong> for 15% OFF</span>
+      <span class="announcement-mobile-text show-mobile">🌿 15% OFF: Code <strong>GROWTH15</strong></span>
+      <span class="sep">•</span>
+      <a href="https://wa.me/917889964048?text=Hello%20Sajad,%20I%20want%20to%20consult%20about%20my%20hair%20loss" target="_blank" class="announcement-link">
+        <span class="hide-mobile">Direct Consultation: </span>+91 7889964048 ➔
+      </a>
+    </div>
+  </div>
+
+  <!-- Minimalist Clean Header (Symmetrical 3-Column Layout) -->
+  <header class="header" id="main-header">
+    <div class="container header-inner">
+      
+      <!-- Mobile Menu Toggle Button (Clean SVG Icon) -->
+      <button class="mobile-menu-btn" onclick="openMobileMenu()" aria-label="Toggle navigation menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Brand Identity (Clean Luxury Typography) -->
+      <a href="#" class="brand-logo" id="brand-logo">
+        <span class="brand-name">SAJAD HYGAM</span>
+        <span class="brand-tagline">Botanical Scalp Science</span>
+      </a>
+
+      <!-- Minimal Navigation: Only 3 Essential Links -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#problem" class="nav-link">The Problem</a></li>
+          <li><a href="#products" class="nav-link">Formulations</a></li>
+          <li><a href="#reviews" class="nav-link">Patient Reviews</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions: Clean & Understated -->
+      <div class="header-actions">
+        <a href="https://www.instagram.com/sajad_hygam" target="_blank" class="header-action-text" title="Instagram: @sajad_hygam">
+          @sajad_hygam
+        </a>
+
+        <a href="https://wa.me/917889964048?text=Hello%20Sajad,%20I%20want%20to%20consult%20about%20hair%20regrowth" target="_blank" class="btn-wa-header">
+          <span class="wa-dot"></span>
+          <span>WhatsApp Sajad</span>
+        </a>
+
+        <!-- Modern SVG Shopping Bag (No Emojis) -->
+        <button class="cart-toggle-btn" onclick="openCartDrawer()" aria-label="Open Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cart-count-badge">1</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Slide Drawer (Real E-Commerce Menu Experience) -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+    
+    <!-- Drawer Header -->
+    <div class="mobile-nav-header">
+      <div class="brand-logo">
+        <span class="brand-name" style="font-size: 1.12rem;">SAJAD HYGAM</span>
+        <span class="brand-tagline">Botanical Scalp Science</span>
+      </div>
+      <button class="close-btn" onclick="closeMobileMenu()" aria-label="Close navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Scrollable Body -->
+    <div class="mobile-nav-body">
+
+      <!-- 1. Doctor / Trichologist Direct Chat Banner -->
+      <div class="drawer-consult-card">
+        <div class="consult-badge">
+          <span class="pulse-green-dot"></span>
+          <span>Sajad Hygam • Formulator</span>
+        </div>
+        <div class="consult-title">Need Personalized Scalp Advice?</div>
+        <p class="consult-sub">Send scalp photos directly on WhatsApp for custom dosage guidance.</p>
+        <a href="https://wa.me/917889964048?text=Hello%20Sajad,%20I%20want%20to%20consult%20about%20my%20hair%20loss" target="_blank" class="drawer-wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Chat on WhatsApp (+91 7889964048)</span>
+        </a>
+      </div>
+
+      <!-- 2. E-Commerce Product Catalog Section -->
+      <div class="drawer-nav-section">
+        <div class="drawer-section-label">BOTANICAL FORMULATIONS</div>
+        
+        <a href="product.html?id=sh-bundle-mastery" class="drawer-product-row" onclick="closeMobileMenu()">
+          <div class="drawer-product-thumb">
+            <img src="assets/images/sajad_bundle.jpg" alt="3-Step Regrowth System" />
+          </div>
+          <div class="drawer-product-info">
+            <div class="drawer-prod-title">
+              3-Step Regrowth System
+              <span class="drawer-tag-gold">★ Save 38%</span>
+            </div>
+            <div class="drawer-prod-sub">Full 90-Day Root-to-Tip Restoration Kit</div>
+            <div class="drawer-prod-price">₹2,499 <span class="drawer-orig-price">₹3,999</span></div>
+          </div>
+          <span class="drawer-chevron">›</span>
+        </a>
+
+        <a href="product.html?id=sh-elixir-100" class="drawer-product-row" onclick="closeMobileMenu()">
+          <div class="drawer-product-thumb">
+            <img src="assets/images/sajad_elixir.jpg" alt="Hair Regrowth Elixir" />
+          </div>
+          <div class="drawer-product-info">
+            <div class="drawer-prod-title">
+              Hair Regrowth Elixir
+              <span class="drawer-tag-pill">Save 33%</span>
+            </div>
+            <div class="drawer-prod-sub">2% Active Rosemary + Kalonji (100ml)</div>
+            <div class="drawer-prod-price">₹1,199 <span class="drawer-orig-price">₹1,799</span></div>
+          </div>
+          <span class="drawer-chevron">›</span>
+        </a>
+
+        <a href="product.html?id=sh-spray-150" class="drawer-product-row" onclick="closeMobileMenu()">
+          <div class="drawer-product-thumb">
+            <img src="assets/images/sajad_spray.jpg" alt="Follicle Scalp Tonic" />
+          </div>
+          <div class="drawer-product-info">
+            <div class="drawer-prod-title">
+              Follicle Scalp Tonic Spray
+              <span class="drawer-tag-pill">Save 30%</span>
+            </div>
+            <div class="drawer-prod-sub">Daily Non-Greasy Leave-In (150ml)</div>
+            <div class="drawer-prod-price">₹899 <span class="drawer-orig-price">₹1,299</span></div>
+          </div>
+          <span class="drawer-chevron">›</span>
+        </a>
+      </div>
+
+      <!-- 3. Education & Clinical Proof Section -->
+      <div class="drawer-nav-section">
+        <div class="drawer-section-label">CLINICAL SCIENCE &amp; RESULTS</div>
+        
+        <a href="#problem" class="drawer-nav-link" onclick="closeMobileMenu()">
+          <div class="drawer-link-left">
+            <span class="drawer-link-icon">🔬</span>
+            <div>
+              <div class="drawer-link-title">The Root Cause (DHT Science)</div>
+              <div class="drawer-link-desc">Why minoxidil fails &amp; how herbs reverse shedding</div>
+            </div>
+          </div>
+          <span class="drawer-chevron">›</span>
+        </a>
+
+        <a href="#reviews" class="drawer-nav-link" onclick="closeMobileMenu()">
+          <div class="drawer-link-left">
+            <span class="drawer-link-icon">⭐</span>
+            <div>
+              <div class="drawer-link-title">Patient Clinical Reviews</div>
+              <div class="drawer-link-desc">14,800+ Verified scalp transformations</div>
+            </div>
+          </div>
+          <span class="drawer-chevron">›</span>
+        </a>
+      </div>
+
+      <!-- 4. Active Promo Card -->
+      <div class="drawer-promo-card">
+        <div class="promo-card-badge">LIMITED PERIOD OFFER</div>
+        <div class="promo-card-title">Flat 15% OFF On Your Order</div>
+        <div class="promo-card-sub">Use coupon code <strong class="promo-code-pill">GROWTH15</strong> at checkout</div>
+      </div>
+
+      <!-- 5. Social & Direct Contact -->
+      <div class="drawer-footer-actions">
+        <a href="https://www.instagram.com/sajad_hygam" target="_blank" class="drawer-instagram-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>Follow @sajad_hygam on Instagram</span>
+        </a>
+
+        <!-- Trust Features Strip -->
+        <div class="drawer-trust-strip">
+          <div class="trust-pill-mini">🌿 100% Herbal</div>
+          <div class="trust-pill-mini">🚚 Free Shipping ₹999+</div>
+          <div class="trust-pill-mini">🔒 Secure Checkout</div>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Section 1: Hero Section (Clean White Theme, Bespoke Layout) -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <span class="hero-label">CLINICALLY FORMULATED BOTANICAL TRICHOLOGY</span>
+            
+            <h1 class="hero-title">
+              Hair Fall Stops. <br />
+              Dormant Roots Regrow.
+            </h1>
+
+            <p class="hero-description">
+              Handcrafted small-batch botanical solutions by <strong>Sajad Hygam</strong>. Combining standardized 2% Rosemary active extract, cold-pressed Black Kalonji, and natural DHT blockers to stop severe shedding and restore natural scalp density in 60 to 90 days.
+            </p>
+
+            <div class="hero-cta-group">
+              <button class="btn-solid-dark" onclick="scrollToShop()">
+                Explore Formulations ➔
+              </button>
+              <a href="https://wa.me/917889964048?text=Hello%20Sajad,%20can%20you%20analyze%20my%20hair%20loss%20photos%3F" target="_blank" class="btn-outline-dark">
+                💬 Consult Sajad on WhatsApp
+              </a>
+            </div>
+
+            <div class="hero-trust-bar">
+              <div class="trust-item">
+                <span class="trust-bold">94.2%</span>
+                <span class="trust-label">Notice new baby hairs</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-bold">14 Days</span>
+                <span class="trust-label">To halt daily shedding</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-bold">100%</span>
+                <span class="trust-label">Pure botanical actives</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-image-card">
+              <img src="assets/images/sajad_elixir.jpg" alt="Sajad Hygam Hair Regrowth Elixir Bottle" />
+              <div class="hero-card-footer">
+                <div class="verified-pill">
+                  <span class="check-icon">✓</span>
+                  <span>Handcrafted by Sajad Hygam • 18,400+ Clients Restored</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: The Hair Loss Problem (Traya / Medical Root Cause Breakdown) -->
+    <section class="problem-section" id="problem">
+      <div class="container">
+        <div class="section-heading-box">
+          <span class="section-tag">THE ROOT CAUSE</span>
+          <h2 class="section-title">Why Hair Loss Happens & Why Most Shampoos Fail</h2>
+          <p class="section-subtitle">
+            Hair loss is not just a surface cosmetic issue. When hair falls, the follicle beneath the scalp is suffocating. Commercial treatments often use harsh chemical minoxidil that creates dependency, or surface oils that never penetrate the dermis.
+          </p>
+        </div>
+
+        <div class="problem-grid-4" id="problem-grid-4">
+          
+          <div class="problem-card">
+            <span class="problem-step">01</span>
+            <h3 class="problem-card-title">DHT Sebum Calcification</h3>
+            <p class="problem-card-desc">
+              The 5-alpha reductase enzyme turns testosterone into DHT. This hardens like wax around the hair bulb, choking off capillary blood supply.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <span class="problem-step">02</span>
+            <h3 class="problem-card-title">Follicle Miniaturization</h3>
+            <p class="problem-card-desc">
+              Starved of blood, nutrients, and oxygen, thick hair strands shrink progressively into invisible fuzz, eventually leading to bald patches.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <span class="problem-step">03</span>
+            <h3 class="problem-card-title">The Chemical Rebound Trap</h3>
+            <p class="problem-card-desc">
+              Pharmaceutical minoxidil forces blood vessels open artificially. When you stop using it, all the new hair sheds violently within 30 days.
+            </p>
+          </div>
+
+          <div class="problem-card highlighted">
+            <span class="problem-step">04</span>
+            <h3 class="problem-card-title">Sajad's Botanical Solution</h3>
+            <p class="problem-card-desc">
+              Standardized Rosemary carnosic acid + Thymoquinone naturally dissolves DHT sebum and awakens dormant roots without chemical addiction.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Mobile Touch-Swipe Carousel Controls for Root Cause -->
+        <div class="mobile-carousel-controls">
+          <div class="mobile-carousel-dots" id="problem-dots">
+            <button class="carousel-dot active" onclick="scrollToSlide('problem-grid-4', 0)" aria-label="Go to cause 1"></button>
+            <button class="carousel-dot" onclick="scrollToSlide('problem-grid-4', 1)" aria-label="Go to cause 2"></button>
+            <button class="carousel-dot" onclick="scrollToSlide('problem-grid-4', 2)" aria-label="Go to cause 3"></button>
+            <button class="carousel-dot" onclick="scrollToSlide('problem-grid-4', 3)" aria-label="Go to cause 4"></button>
+          </div>
+          <span class="mobile-swipe-guide">👈 Swipe with thumb to explore root causes 👉</span>
+        </div>
+
+        <div class="problem-quote-banner">
+          <div class="quote-text">
+            <strong>"Stop treating dead hair on the outside. Start revitalizing the living root on the inside."</strong>
+            <p>Every bottle of Sajad Hygam is formulated with cold-pressed botanical extractions tested for cellular follicle absorption.</p>
+          </div>
+          <a href="https://wa.me/917889964048?text=Hello%20Sajad,%20I%20want%20to%20send%20my%20hair%20photos%20for%20root%20cause%20assessment" target="_blank" class="btn-solid-dark">
+            Send Scalp Photos to Sajad ➔
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: The 3 Core Products (Exactly 3 Products) -->
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-heading-box">
+          <span class="section-tag">BOTANICAL FORMULATIONS</span>
+          <h2 class="section-title">Targeted Scalp Solutions</h2>
+          <p class="section-subtitle">
+            Pure, uncompromised formulations handcrafted in small batches by Sajad Hygam.
+          </p>
+        </div>
+
+        <div class="products-grid-3" id="products-grid-3">
+          
+          <!-- Product 1: The Signature Elixir -->
+          <div class="product-card" id="card-elixir">
+            <div class="product-badge">Signature Elixir • Save 33%</div>
+            <a href="product.html?id=sh-elixir-100" class="product-img-box" aria-label="View Hair Regrowth Elixir Page">
+              <img src="assets/images/sajad_elixir.jpg" alt="Sajad Hygam Hair Regrowth Elixir (100ml)" />
+              <span class="quick-view-btn">View Formula &amp; Science →</span>
+            </a>
+            <div class="product-card-body">
+              <div class="product-rating">★★★★★ <span>(1,420 Reviews)</span></div>
+              <h3 class="product-title">
+                <a href="product.html?id=sh-elixir-100" style="color: inherit; text-decoration: none;">Hair Regrowth Elixir</a>
+              </h3>
+              <p class="product-desc">
+                Intensive root-fortifying oil infusion with 2% Rosemary active extract, Black Kalonji (Nigella Sativa), and cold-pressed Castor.
+              </p>
+              <div class="product-meta">100ml Dropper Bottle • 100% Herbal</div>
+              <div class="product-bottom-row">
+                <div class="product-price">
+                  <span class="price-current">₹1,199</span>
+                  <span class="price-original">₹1,799</span>
+                </div>
+                <button class="btn-add-product" onclick="addToCart('sh-elixir-100')">
+                  + Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2: Complete 3-Step System (Featured Bundle) -->
+          <div class="product-card featured" id="card-bundle">
+            <div class="product-badge" style="background:#111827; color:#fff;">★ Sajad's Choice • Save 38%</div>
+            <a href="product.html?id=sh-bundle-mastery" class="product-img-box" aria-label="View Complete 3-Step Regrowth System Page">
+              <img src="assets/images/sajad_bundle.jpg" alt="Complete 3-Step Root-to-Tip Regrowth System by Sajad Hygam" />
+              <span class="quick-view-btn">View Formula &amp; Science →</span>
+            </a>
+            <div class="product-card-body">
+              <div class="product-rating">★★★★★ <span>(2,890 Reviews)</span></div>
+              <h3 class="product-title">
+                <a href="product.html?id=sh-bundle-mastery" style="color: inherit; text-decoration: none;">Complete 3-Step Regrowth System</a>
+              </h3>
+              <p class="product-desc">
+                The full 90-day protocol: Regrowth Elixir + Daytime Follicle Tonic Spray + Restorative Shampoo + Free Scalp Applicator.
+              </p>
+              <div class="product-meta">Full 90-Day Kit • Free Express Shipping</div>
+              <div class="product-bottom-row">
+                <div class="product-price">
+                  <span class="price-current">₹2,499</span>
+                  <span class="price-original">₹3,999</span>
+                </div>
+                <button class="btn-add-product" style="background: #111827; color:#fff;" onclick="addToCart('sh-bundle-mastery')">
+                  + Add Bundle
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3: Follicle Scalp Tonic -->
+          <div class="product-card" id="card-spray">
+            <div class="product-badge">Lightweight Daily • Save 30%</div>
+            <a href="product.html?id=sh-spray-150" class="product-img-box" aria-label="View Follicle Scalp Tonic Spray Page">
+              <img src="assets/images/sajad_spray.jpg" alt="Sajad Hygam Follicle Scalp Tonic Spray (150ml)" />
+              <span class="quick-view-btn">View Formula &amp; Science →</span>
+            </a>
+            <div class="product-card-body">
+              <div class="product-rating">★★★★★ <span>(680 Reviews)</span></div>
+              <h3 class="product-title">
+                <a href="product.html?id=sh-spray-150" style="color: inherit; text-decoration: none;">Follicle Scalp Tonic Spray</a>
+              </h3>
+              <p class="product-desc">
+                Non-greasy, fast-absorbing daily daytime leave-in spray with Peppermint Hydrosol, Green Tea EGCG, Saw Palmetto, and Niacinamide.
+              </p>
+              <div class="product-meta">150ml Nozzle Spray • Zero Greasiness</div>
+              <div class="product-bottom-row">
+                <div class="product-price">
+                  <span class="price-current">₹899</span>
+                  <span class="price-original">₹1,299</span>
+                </div>
+                <button class="btn-add-product" onclick="addToCart('sh-spray-150')">
+                  + Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mobile Touch-Swipe Carousel Controls for Products -->
+        <div class="mobile-carousel-controls">
+          <div class="mobile-carousel-dots" id="product-dots">
+            <button class="carousel-dot active" onclick="scrollToSlide('products-grid-3', 0)" aria-label="Go to product 1"></button>
+            <button class="carousel-dot" onclick="scrollToSlide('products-grid-3', 1)" aria-label="Go to product 2"></button>
+            <button class="carousel-dot" onclick="scrollToSlide('products-grid-3', 2)" aria-label="Go to product 3"></button>
+          </div>
+          <span class="mobile-swipe-guide">👈 Swipe with thumb to view formulations 👉</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Left-to-Right Animated Reviews Marquee -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-heading-box">
+          <span class="section-tag">VERIFIED TRANSFORMATIONS</span>
+          <h2 class="section-title">What Real Patients Say</h2>
+          <p class="section-subtitle">
+            Authentic experiences from men and women across India who restored their scalp with Sajad Hygam.
+          </p>
+        </div>
+      </div>
+
+      <!-- Infinite Left-to-Right Scrolling Marquee Track -->
+      <div class="marquee-wrapper">
+        <div class="marquee-track" id="reviews-marquee-track">
+          <!-- Populated by JavaScript and loops infinitely from Left to Right -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Section 5: Minimal Footer (Pure Deep Black Background as requested) -->
+  <footer class="footer-black" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col-brand">
+          <div class="brand-name">SAJAD HYGAM</div>
+          <div class="brand-tagline">Botanical Scalp Science</div>
+          <p>
+            Handcrafted botanical hair restoration formulations by Sajad Hygam. Dedicated to reversing scalp thinning and rebuilding follicle density without harsh chemicals or dependency.
+          </p>
+        </div>
+
+        <div class="footer-col-nav">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#problem">The Problem & Root Cause</a></li>
+            <li><a href="#products">Botanical Formulations</a></li>
+            <li><a href="#reviews">Verified Client Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-contact">
+          <h4>Direct Consultation</h4>
+          <div class="footer-contact-details">
+            <div class="contact-line">
+              <span>📞 Phone:</span>
+              <a href="tel:+917889964048">+91 7889964048</a>
+            </div>
+            <div class="contact-line">
+              <span>💬 WhatsApp:</span>
+              <a href="https://wa.me/917889964048" target="_blank">+91 7889964048</a>
+            </div>
+            <div class="contact-line">
+              <span>📸 Instagram:</span>
+              <a href="https://www.instagram.com/sajad_hygam" target="_blank">@sajad_hygam</a>
+            </div>
+            <div class="contact-line">
+              <span>📍 Origin:</span>
+              <span>Hygam, Jammu & Kashmir, India</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Sajad Hygam. All Rights Reserved. Botanical Trichology.</div>
+        <div class="footer-badges">
+          <span>🌿 100% Herbal</span>
+          <span>•</span>
+          <span>🐰 Cruelty-Free</span>
+          <span>•</span>
+          <span>🛡️ 60-Day Regrowth Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">🛒 Your Treatment Bag</div>
+      <button class="close-btn" onclick="closeCartDrawer()">✕</button>
+    </div>
+
+    <div class="shipping-progress-box">
+      <div class="shipping-progress-text" id="shipping-progress-text">
+        Add <strong>₹300</strong> more for <strong>FREE Express Delivery</strong>!
+      </div>
+      <div class="shipping-progress-bar-bg">
+        <div class="shipping-progress-bar-fill" id="shipping-progress-fill"></div>
+      </div>
+    </div>
+
+    <div class="cart-items-container" id="cart-items-container">
+      <!-- Populated dynamically by JS -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="coupon-row">
+        <input type="text" id="coupon-input" placeholder="Coupon Code (GROWTH15)" />
+        <button class="btn-apply-coupon" onclick="applyCoupon()">Apply</button>
+      </div>
+
+      <div class="cart-totals">
+        <div class="cart-totals-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">₹2,499</span>
+        </div>
+        <div class="cart-totals-row" id="cart-discount-row" style="display: none; color: #166534;">
+          <span>Discount:</span>
+          <span id="cart-discount-val">-₹0</span>
+        </div>
+        <div class="cart-totals-row">
+          <span>Express Shipping:</span>
+          <span id="cart-shipping-val">FREE</span>
+        </div>
+        <div class="cart-totals-row final">
+          <span>Total:</span>
+          <span class="total-amount" id="cart-total-val">₹2,499</span>
+        </div>
+      </div>
+
+      <button class="btn-checkout" onclick="openCheckoutModal()">
+        Proceed to Checkout ➔
+      </button>
+
+      <a href="https://wa.me/917889964048?text=Hello%20Sajad,%20I%20have%20questions%20about%20ordering%20the%20hair%20treatment." target="_blank" style="text-align: center; font-size: 0.75rem; color: #4b5563; display: block; margin-top: 4px;">
+        💬 Or Order Directly via WhatsApp (+91 7889964048)
+      </a>
+    </div>
+  </aside>
+
+  <!-- 2-Step Fast Checkout Modal -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="checkout-modal-box">
+      <div class="modal-header">
+        <h3>Fast Delivery Checkout</h3>
+        <button class="close-btn" onclick="closeCheckoutModal()">✕</button>
+      </div>
+
+      <form class="checkout-form" id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+        <div class="form-group-row">
+          <div class="form-field">
+            <label for="checkout-name">Full Name *</label>
+            <input type="text" id="checkout-name" required placeholder="e.g. Imran Khan" />
+          </div>
+          <div class="form-field">
+            <label for="checkout-phone">WhatsApp / Phone Number *</label>
+            <input type="tel" id="checkout-phone" required placeholder="e.g. 9876543210" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="checkout-address">Delivery Address (House / Street / Area) *</label>
+          <input type="text" id="checkout-address" required placeholder="e.g. House No. 42, Green Park" />
+        </div>
+
+        <div class="form-group-row">
+          <div class="form-field">
+            <label for="checkout-city">City / District *</label>
+            <input type="text" id="checkout-city" required placeholder="e.g. Srinagar / Delhi" />
+          </div>
+          <div class="form-field">
+            <label for="checkout-pincode">Pincode *</label>
+            <input type="text" id="checkout-pincode" required placeholder="e.g. 190001" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Preferred Payment Mode:</label>
+          <div class="payment-methods-grid">
+            <div class="payment-card active" onclick="selectPaymentMethod(this, 'UPI / Online')">
+              <div class="payment-card-name">⚡ UPI / Online</div>
+            </div>
+            <div class="payment-card" onclick="selectPaymentMethod(this, 'Cash on Delivery')">
+              <div class="payment-card-name">💵 Cash on Delivery</div>
+            </div>
+            <div class="payment-card" onclick="selectPaymentMethod(this, 'WhatsApp Confirmation')">
+              <div class="payment-card-name">💬 WhatsApp Order</div>
+            </div>
+          </div>
+          <input type="hidden" id="selected-payment-method" value="UPI / Online" />
+        </div>
+
+        <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px; font-size: 0.82rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span>Subtotal:</span>
+            <span id="checkout-subtotal">₹2,499</span>
+          </div>
+          <div style="display: none; justify-content: space-between; margin-bottom: 4px; color: #166534;" id="checkout-discount-row">
+            <span>Discount:</span>
+            <span id="checkout-discount">-₹0</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span>Express Delivery:</span>
+            <span id="checkout-shipping">FREE</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 1.05rem; color: #111827; border-top: 1px solid #e5e7eb; padding-top: 6px; margin-top: 4px;">
+            <span>Total Payable:</span>
+            <span id="checkout-total">₹2,499</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-solid-dark" style="width: 100%; justify-content: center; padding: 14px;">
+          Confirm Order via WhatsApp 🚀
+        </button>
+
+        <p style="font-size: 0.72rem; text-align: center; color: #6b7280; line-height: 1.4;">
+          🔒 Secure Checkout. Submitting sends your order details directly to Sajad Hygam (+91 7889964048) on WhatsApp for priority packaging.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal-backdrop" id="success-modal">
+    <div class="success-modal-box">
+      <div class="success-icon-badge">✓</div>
+      <h3 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 6px;">Order Placed Successfully!</h3>
+      <p style="font-size: 0.85rem; color: #4b5563; margin-bottom: 16px;">
+        Thank you for trusting Sajad Hygam's Botanical Hair Science.
+      </p>
+      <div class="order-id-pill" id="success-order-id">Order ID: #SH-829104</div>
+
+      <p style="font-size: 0.8rem; color: #6b7280; margin-bottom: 20px;">
+        Tap below to open WhatsApp with Sajad to receive your express courier tracking number:
+      </p>
+
+      <a id="success-wa-btn" href="#" target="_blank" class="btn-solid-dark" style="width: 100%; justify-content: center; margin-bottom: 10px;">
+        💬 Open WhatsApp with Sajad
+      </a>
+
+      <button class="btn-outline-dark" style="width: 100%; justify-content: center;" onclick="closeSuccessModal()">
+        Back to Website
+      </button>
+    </div>
+  </div>
+
+
+  <!-- Subtle Notification Toast -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Floating Mobile WhatsApp Direct Consultation -->
+  <a href="https://wa.me/917889964048?text=Hello%20Sajad,%20I%20want%20to%20consult%20about%20my%20hair%20regrowth" target="_blank" class="floating-wa-btn" aria-label="Consult Sajad on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>

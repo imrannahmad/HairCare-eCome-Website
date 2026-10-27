@@ -1,0 +1,17 @@
+{
+  "name": "sajad-hygam-haircare",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sajad Hygam Botanical Hair Regrowth - Next.js Application",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
