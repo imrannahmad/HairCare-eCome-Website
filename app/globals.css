@@ -364,9 +364,432 @@ textarea:focus {
 }
 
 /* ==========================================================================
-   Section 1: Hero Section (Clean Traya Style)
+   E-Commerce Promotional Hero Slider & Trust Bar
    ========================================================================== */
 
+.ecom-hero-section {
+  position: relative;
+  padding: 24px 0 44px;
+  background-color: #ffffff;
+}
+
+.ecom-hero-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 12px 36px -12px rgba(15, 23, 42, 0.08);
+}
+
+.ecom-slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.ecom-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.ecom-slide-card {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  min-height: 490px;
+  align-items: stretch;
+  background: #ffffff;
+}
+
+/* Slide Visual */
+.ecom-slide-visual {
+  position: relative;
+  width: 100%;
+  background: #f8fafc;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecom-slide-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecom-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ecom-floating-sale-pill {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.ecom-floating-rating {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: #0f172a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ecom-floating-rating .star {
+  color: #eab308;
+}
+
+/* Slide Content */
+.ecom-slide-content {
+  padding: 48px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  background: #ffffff;
+}
+
+.ecom-category-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #059669;
+  background: #ecfdf5;
+  padding: 5px 12px;
+  border-radius: 6px;
+  align-self: flex-start;
+  margin-bottom: 14px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.ecom-slide-title {
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 14px;
+  letter-spacing: -0.4px;
+}
+
+.ecom-slide-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 22px;
+  max-width: 520px;
+}
+
+.ecom-price-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+
+.ecom-price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.ecom-current-price {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ecom-original-price {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.ecom-save-badge {
+  background: #166534;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.ecom-deal-notice {
+  font-size: 0.82rem;
+  color: #166534;
+  font-weight: 600;
+}
+
+/* CTAs */
+.ecom-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.btn-ecom-add-bag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.96rem;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1px solid #111827;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(17, 24, 39, 0.16);
+}
+
+.btn-ecom-add-bag:hover {
+  background: #1f2937;
+  border-color: #1f2937;
+  transform: translateY(-1px);
+}
+
+.btn-ecom-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-ecom-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.ecom-slide-mini-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.74rem;
+  color: #64748b;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+/* Arrows */
+.ecom-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: all 0.2s ease;
+}
+
+.ecom-nav-btn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+}
+
+.prev-btn {
+  left: 14px;
+}
+
+.next-btn {
+  right: 14px;
+}
+
+/* Dots */
+.ecom-dots-container {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.ecom-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.ecom-dot.active {
+  width: 24px;
+  background: #0f172a;
+}
+
+/* Slider Tabs (Desktop) */
+.ecom-slider-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.ecom-tab-pill {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.ecom-tab-pill:hover {
+  border-color: #94a3b8;
+}
+
+.ecom-tab-pill.active {
+  background: #111827;
+  border-color: #111827;
+  color: #ffffff;
+}
+
+.tab-num {
+  font-size: 0.74rem;
+  font-weight: 800;
+  opacity: 0.7;
+}
+
+.tab-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-discount {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: #166534;
+  color: #ffffff;
+}
+
+.ecom-tab-pill.active .tab-discount {
+  background: #ffffff;
+  color: #111827;
+}
+
+/* USP Strip */
+.ecom-usp-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
+}
+
+.ecom-usp-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.usp-icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.usp-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.usp-sub {
+  font-size: 0.74rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Classic fallback hero */
 .hero-section {
   position: relative;
   padding: 56px 0 76px;
@@ -2452,170 +2875,210 @@ textarea:focus {
     transform: scale(0.94);
   }
 
-  /* Mobile Hero Section: Image on TOP, Text Underneath, Crisp White Background */
-  .hero-section {
-    padding: 16px 0 36px !important;
+  /* ==========================================================================
+     Mobile E-Commerce Hero Slider: Image on TOP, Info Below, Pure White BG
+     ========================================================================== */
+  .ecom-hero-section {
+    padding: 12px 0 24px !important;
     background-color: #ffffff !important;
   }
 
-  .hero-grid {
+  .ecom-hero-slider {
+    border-radius: 18px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 6px 20px -6px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  .ecom-slide-card {
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important;
+    min-height: auto !important;
   }
 
-  /* 1. HERO VISUAL ON TOP */
-  .hero-visual {
+  /* 1. VISUAL ON TOP */
+  .ecom-slide-visual {
     order: 1 !important;
     width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-
-  .hero-image-card {
-    background: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    border-radius: 18px !important;
-    padding: 8px !important;
-    box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.07) !important;
+    min-height: unset !important;
+    height: 310px !important;
     position: relative !important;
   }
 
-  .hero-image-card img {
+  .ecom-slide-image-wrapper {
+    min-height: unset !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .ecom-slide-img {
     height: 310px !important;
-    border-radius: 14px !important;
     width: 100% !important;
     object-fit: cover !important;
   }
 
-  .hero-floating-badge {
-    top: 18px !important;
-    left: 18px !important;
+  .ecom-floating-sale-pill {
+    top: 14px !important;
+    left: 14px !important;
     font-size: 0.68rem !important;
     padding: 5px 11px !important;
   }
 
-  .hero-card-footer {
-    margin-top: 8px !important;
-    padding: 2px 4px 4px !important;
-  }
-
-  .verified-pill {
+  .ecom-floating-rating {
+    bottom: 14px !important;
+    left: 14px !important;
     font-size: 0.72rem !important;
-    padding: 6px 10px !important;
-    background: #f8fafc !important;
-    border-radius: 8px !important;
-    color: #166534 !important;
-    font-weight: 600 !important;
+    padding: 5px 11px !important;
   }
 
-  /* 2. HERO CONTENT BELOW IMAGE */
-  .hero-content {
+  /* 2. CONTENT BELOW IMAGE */
+  .ecom-slide-content {
     order: 2 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: left !important;
+    padding: 20px 16px 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .hero-label {
-    display: inline-flex !important;
-    align-self: flex-start !important;
+  .ecom-category-tag {
     font-size: 0.68rem !important;
-    padding: 5px 12px !important;
-    margin-bottom: 12px !important;
-    background: #f1f5f9 !important;
-    color: #0f172a !important;
-    font-weight: 800 !important;
-    border-radius: 999px !important;
-    letter-spacing: 0.8px !important;
+    padding: 4px 10px !important;
+    margin-bottom: 10px !important;
   }
 
-  .hero-title {
-    font-size: clamp(1.85rem, 6.8vw, 2.25rem) !important;
-    line-height: 1.2 !important;
-    margin-bottom: 12px !important;
-    color: #0f172a !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.3px !important;
+  .ecom-slide-title {
+    font-size: 1.38rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
   }
 
-  .hero-description {
-    font-size: 0.92rem !important;
-    line-height: 1.6 !important;
-    margin-bottom: 22px !important;
-    color: #475569 !important;
+  .ecom-slide-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 16px !important;
   }
 
-  .hero-cta-group {
+  .ecom-price-box {
+    padding: 12px 14px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .ecom-current-price {
+    font-size: 1.5rem !important;
+  }
+
+  .ecom-original-price {
+    font-size: 1rem !important;
+  }
+
+  .ecom-save-badge {
+    font-size: 0.68rem !important;
+  }
+
+  .ecom-deal-notice {
+    font-size: 0.76rem !important;
+  }
+
+  /* CTAs on Mobile */
+  .ecom-cta-actions {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     gap: 10px !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 14px !important;
   }
 
-  .btn-solid-dark,
-  .btn-outline-dark {
+  .btn-ecom-add-bag,
+  .btn-ecom-secondary {
     width: 100% !important;
-    min-height: 50px !important;
-    font-size: 0.92rem !important;
-    font-weight: 700 !important;
-    border-radius: 12px !important;
+    min-height: 48px !important;
     justify-content: center !important;
+    border-radius: 12px !important;
+    font-size: 0.94rem !important;
+    padding: 13px !important;
   }
 
-  .btn-solid-dark {
+  .btn-ecom-add-bag {
     background: #0f172a !important;
     color: #ffffff !important;
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16) !important;
   }
 
-  .btn-outline-dark {
+  .btn-ecom-secondary {
     background: #ffffff !important;
     border: 1.5px solid #e2e8f0 !important;
     color: #0f172a !important;
   }
 
-  /* 3. SLEEK MOBILE TRUST PROOF BAR */
-  .hero-trust-bar {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px !important;
-    padding: 14px 10px !important;
-    background: #f8fafc !important;
-    border: 1px solid #e2e8f0 !important;
+  .ecom-slide-mini-trust {
+    justify-content: center !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* Nav Controls on Mobile (Placed on Top Product Image) */
+  .ecom-nav-btn {
+    top: 155px !important;
+    transform: translateY(-50%) !important;
+    width: 34px !important;
+    height: 34px !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16) !important;
+  }
+
+  .prev-btn {
+    left: 10px !important;
+  }
+
+  .next-btn {
+    right: 10px !important;
+  }
+
+  .ecom-dots-container {
+    top: 278px !important;
+    bottom: auto !important;
+    padding: 4px 10px !important;
+  }
+
+  .ecom-dot {
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  .ecom-dot.active {
+    width: 20px !important;
+  }
+
+  /* Quick Tabs on Mobile */
+  .ecom-slider-tabs {
+    display: none !important;
+  }
+
+  /* 4-Item USP Strip on Mobile */
+  .ecom-usp-strip {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    padding: 12px !important;
+    margin-top: 14px !important;
     border-radius: 14px !important;
-    text-align: center !important;
+    background: #ffffff !important;
   }
 
-  .trust-item {
-    position: relative !important;
-    padding: 2px 4px !important;
+  .ecom-usp-item {
+    gap: 10px !important;
   }
 
-  .trust-item:not(:last-child)::after {
-    content: '' !important;
-    position: absolute !important;
-    right: 0 !important;
-    top: 15% !important;
-    height: 70% !important;
-    width: 1px !important;
-    background: #e2e8f0 !important;
+  .usp-icon-circle {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 1.05rem !important;
   }
 
-  .trust-bold {
-    font-size: 1.18rem !important;
-    font-weight: 800 !important;
-    color: #0f172a !important;
+  .usp-title {
+    font-size: 0.78rem !important;
     line-height: 1.2 !important;
   }
 
-  .trust-label {
+  .usp-sub {
     font-size: 0.68rem !important;
-    color: #64748b !important;
-    font-weight: 600 !important;
-    margin-top: 2px !important;
-    line-height: 1.25 !important;
+    line-height: 1.2 !important;
   }
 
   /* ==========================================================================
