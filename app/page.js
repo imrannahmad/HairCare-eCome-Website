@@ -655,20 +655,20 @@ export default function HomePage() {
 
                 {/* Primary & Secondary Action CTAs */}
                 <div className="botanical-cta-group">
-                  <button
-                    type="button"
-                    className="btn-botanical-primary"
-                    onClick={() => addToCart('sh-spray-150', 1)}
-                  >
+                  <a href="#products" className="btn-botanical-primary">
                     <span>Shop Scalp Tonic</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="7 13 12 18 17 13"></polyline>
+                      <polyline points="7 6 12 11 17 6"></polyline>
+                    </svg>
+                  </a>
+
+                  <a href="#transformations" className="btn-botanical-secondary">
+                    <span>See Results</span>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14"></path>
                       <path d="M12 5l7 7-7 7"></path>
                     </svg>
-                  </button>
-
-                  <a href="#products" className="btn-botanical-secondary">
-                    Explore Our Formula
                   </a>
                 </div>
 
@@ -866,7 +866,7 @@ export default function HomePage() {
 
         {/* Section 4: Verified Patient Transformations & Clinical Proof */}
         <section className="reviews-section" id="reviews">
-          <div className="container">
+          <div className="container" id="transformations">
             <div className="section-heading-box">
               <span className="section-tag">VERIFIED TRANSFORMATIONS</span>
               <h2 className="section-title">Clinical Results &amp; Real Transformations</h2>
@@ -876,7 +876,7 @@ export default function HomePage() {
             </div>
 
             {/* Featured 90-Day Clinical Transformation Card */}
-            <div className="clinical-transformation-card">
+            <div className="clinical-transformation-card" id="results">
               {/* Left Column: Prominent Before & After Visual */}
               <div className="clinical-image-col">
                 <div className="transformation-image-wrapper">
