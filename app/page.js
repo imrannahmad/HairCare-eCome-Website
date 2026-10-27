@@ -908,14 +908,6 @@ export default function HomePage() {
                   <span className="clinical-timeline-badge">🌿 100% Botanical Actives</span>
                 </div>
 
-                <h3 className="clinical-card-title">
-                  Visible Crown Density &amp; Follicle Reactivation in 90 Days
-                </h3>
-
-                <p className="clinical-card-desc">
-                  Documented follicle progression using the complete Sajad Hygam botanical regimen. Kashmiri walnut bark, stinging nettle, and bioactive botanical oils stimulate micro-circulation and calm local DHT without chemical dependency or shedding cycles.
-                </p>
-
                 {/* 3 Compact Clinical Milestone Stats */}
                 <div className="clinical-metrics-grid">
                   <div className="metric-box">

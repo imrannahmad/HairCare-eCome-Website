@@ -1167,13 +1167,14 @@ textarea:focus {
    ========================================================================== */
 .clinical-transformation-card {
   display: grid;
-  grid-template-columns: 1.18fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 36px;
   background: #ffffff;
   border: 1px solid rgba(27, 56, 43, 0.12);
   border-radius: 24px;
   padding: 32px;
-  margin: 36px 0 48px;
+  margin: 32px auto 48px;
+  max-width: 1120px;
   box-shadow: 0 16px 40px -12px rgba(27, 56, 43, 0.08);
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1286,6 +1287,8 @@ textarea:focus {
 .clinical-info-col {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 16px;
 }
 
 .clinical-badge-row {
@@ -1293,7 +1296,7 @@ textarea:focus {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 2px;
 }
 
 .clinical-verified-badge {
@@ -1321,27 +1324,11 @@ textarea:focus {
   border-radius: 20px;
 }
 
-.clinical-card-title {
-  font-family: var(--font-playfair, 'Playfair Display', serif);
-  font-size: 1.65rem;
-  font-weight: 600;
-  line-height: 1.28;
-  color: #1B382B;
-  margin-bottom: 14px;
-}
-
-.clinical-card-desc {
-  font-size: 0.92rem;
-  line-height: 1.65;
-  color: #4A5751;
-  margin-bottom: 20px;
-}
-
 .clinical-metrics-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  margin-bottom: 22px;
+  margin: 4px 0 6px;
 }
 
 .metric-box {
@@ -3287,59 +3274,107 @@ textarea:focus {
   /* Clinical Transformation Card Mobile */
   .clinical-transformation-card {
     grid-template-columns: 1fr !important;
-    gap: 22px !important;
-    padding: 18px !important;
-    margin: 24px 0 36px !important;
+    gap: 20px !important;
+    padding: 16px 14px !important;
+    margin: 20px 0 32px !important;
     border-radius: 18px !important;
   }
 
   .transformation-image-caption {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-    padding: 12px 14px !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 10px 12px !important;
+  }
+
+  .caption-item {
+    text-align: center !important;
+  }
+
+  .caption-tag {
+    font-size: 0.68rem !important;
+  }
+
+  .caption-desc {
+    font-size: 0.72rem !important;
+    line-height: 1.25 !important;
   }
 
   .caption-divider {
-    display: none !important;
+    display: block !important;
+    font-size: 0.95rem !important;
+    opacity: 0.5 !important;
   }
 
-  .clinical-card-title {
-    font-size: 1.35rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 12px !important;
+  .clinical-info-col {
+    gap: 14px !important;
   }
 
-  .clinical-card-desc {
-    font-size: 0.88rem !important;
-    line-height: 1.6 !important;
+  .clinical-badge-row {
+    gap: 6px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .clinical-verified-badge,
+  .clinical-timeline-badge {
+    font-size: 0.7rem !important;
+    padding: 4px 10px !important;
   }
 
   .clinical-metrics-grid {
-    gap: 8px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    margin: 2px 0 !important;
   }
 
   .metric-box {
-    padding: 10px 8px !important;
+    padding: 10px 4px !important;
+    border-radius: 10px !important;
   }
 
   .metric-val {
-    font-size: 1.18rem !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 2px !important;
   }
 
   .metric-lbl {
-    font-size: 0.68rem !important;
+    font-size: 0.66rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .clinical-quote-box {
+    padding: 12px 14px !important;
+    margin-bottom: 2px !important;
+    border-radius: 0 10px 10px 0 !important;
+  }
+
+  .quote-text {
+    font-size: 0.84rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .quote-author {
+    font-size: 0.72rem !important;
   }
 
   .clinical-action-row {
     flex-direction: column !important;
-    gap: 12px !important;
+    gap: 10px !important;
     width: 100% !important;
   }
 
   .btn-start-protocol {
     width: 100% !important;
-    padding: 14px 20px !important;
+    padding: 13px 18px !important;
+    font-size: 0.9rem !important;
+    border-radius: 12px !important;
+  }
+
+  .link-view-formula {
+    text-align: center !important;
+    font-size: 0.84rem !important;
+    padding: 4px 0 !important;
   }
 
   .marquee-header-strip {
