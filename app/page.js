@@ -170,28 +170,6 @@ export default function HomePage() {
   const [problemActiveDot, setProblemActiveDot] = useState(0);
   const [productActiveDot, setProductActiveDot] = useState(0);
 
-  // E-Commerce Hero Slider State
-  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
-  const [isHeroPaused, setIsHeroPaused] = useState(false);
-  const [touchStartX, setTouchStartX] = useState(null);
-
-  // Hero Slider Auto-rotation
-  useEffect(() => {
-    if (isHeroPaused) return;
-    const interval = setInterval(() => {
-      setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5500);
-    return () => clearInterval(interval);
-  }, [isHeroPaused]);
-
-  const nextHeroSlide = () => {
-    setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-  };
-
-  const prevHeroSlide = () => {
-    setCurrentHeroSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
-  };
-
   // Form State
   const [formData, setFormData] = useState({
     name: '',
@@ -622,197 +600,104 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main id="main-content">
-        {/* Section 1: E-Commerce Promotional Hero Slider */}
-        <section className="ecom-hero-section" id="hero">
-          <div className="container">
-            {/* Slider Container */}
-            <div 
-              className="ecom-hero-slider"
-              onMouseEnter={() => setIsHeroPaused(true)}
-              onMouseLeave={() => setIsHeroPaused(false)}
-              onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
-              onTouchEnd={(e) => {
-                if (!touchStartX) return;
-                const diff = touchStartX - e.changedTouches[0].clientX;
-                if (diff > 45) nextHeroSlide();
-                else if (diff < -45) prevHeroSlide();
-                setTouchStartX(null);
-              }}
-            >
-              <div 
-                className="ecom-slider-track"
-                style={{ transform: `translateX(-${currentHeroSlide * 100}%)` }}
-              >
-                {HERO_SLIDES.map((slide, idx) => (
-                  <div className="ecom-slide" key={slide.id || idx}>
-                    <div className="ecom-slide-card">
-                      
-                      {/* Product Visual / Image - On mobile this is positioned at TOP */}
-                      <div className="ecom-slide-visual">
-                        <div className="ecom-slide-image-wrapper">
-                          <span className="ecom-floating-sale-pill">{slide.badge}</span>
-                          <div className="ecom-floating-rating">
-                            <span className="star">★</span> {slide.rating} • {slide.reviewsCount}
-                          </div>
-                          <img 
-                            src={slide.image} 
-                            alt={slide.title} 
-                            className="ecom-slide-img" 
-                            loading={idx === 0 ? "eager" : "lazy"} 
-                          />
-                        </div>
-                      </div>
+        {/* Section 1: Premium Botanical Hero Section */}
+        <section className="botanical-hero-section" id="hero">
+          <div className="container botanical-hero-container">
+            <div className="botanical-hero-grid">
+              
+              {/* Left Column: Brand Messaging, Benefits & CTAs */}
+              <div className="botanical-hero-content">
+                <div className="botanical-eyebrow">
+                  <span className="eyebrow-leaf">🌿</span>
+                  <span className="eyebrow-text">BOTANICAL SCALP SCIENCE</span>
+                </div>
 
-                      {/* Product / Offer Info - On mobile this sits right below image */}
-                      <div className="ecom-slide-content">
-                        <span className="ecom-category-tag">{slide.tag}</span>
-                        <h1 className="ecom-slide-title">{slide.title}</h1>
-                        <p className="ecom-slide-desc">{slide.description}</p>
-                        
-                        {/* Price & Savings Pill */}
-                        <div className="ecom-price-box">
-                          <div className="ecom-price-main">
-                            <span className="ecom-current-price">₹{slide.price.toLocaleString('en-IN')}</span>
-                            <span className="ecom-original-price">₹{slide.originalPrice.toLocaleString('en-IN')}</span>
-                            <span className="ecom-save-badge">{slide.saveText}</span>
-                          </div>
-                          <div className="ecom-deal-notice">
-                            {slide.dealNotice}
-                          </div>
-                        </div>
+                <h1 className="botanical-hero-headline">
+                  Healthier Scalp.<br />
+                  Stronger, Fuller Hair.
+                </h1>
 
-                        {/* E-Commerce CTAs */}
-                        <div className="ecom-cta-actions">
-                          <button 
-                            type="button" 
-                            className="btn-ecom-add-bag"
-                            onClick={() => {
-                              if (slide.id === 'clinical-results') {
-                                addToCart('sh-bundle-mastery', 1);
-                              } else {
-                                addToCart(slide.id, 1);
-                              }
-                            }}
-                          >
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                              <line x1="3" y1="6" x2="21" y2="6"></line>
-                              <path d="M16 10a4 4 0 0 1-8 0"></path>
-                            </svg>
-                            <span>Add To Bag • ₹{slide.price.toLocaleString('en-IN')}</span>
-                          </button>
-
-                          <a 
-                            href={slide.productLink.startsWith('#') ? slide.productLink : slide.productLink} 
-                            className="btn-ecom-secondary"
-                          >
-                            <span>Explore Formula</span>
-                            <span className="arrow-icon">➔</span>
-                          </a>
-                        </div>
-
-                        {/* Slide Mini Guarantee */}
-                        <div className="ecom-slide-mini-trust">
-                          <span>✓ Pan-India Delivery</span>
-                          <span>•</span>
-                          <span>✓ Cash on Delivery Available</span>
-                          <span>•</span>
-                          <span>✓ Kashmir Small-Batch</span>
-                        </div>
-                      </div>
-
-                    </div>
+                {/* Mobile-Only Product Visual (Flows naturally on small screens) */}
+                <div className="botanical-hero-visual show-mobile-hero">
+                  <div className="botanical-image-frame">
+                    <img 
+                      src="/images/sajad_spray.jpg" 
+                      alt="Sajad Hygam Follicle Scalp Tonic Spray with natural botanicals"
+                      className="botanical-product-image"
+                      loading="eager"
+                    />
                   </div>
-                ))}
-              </div>
+                </div>
 
-              {/* Prev / Next Arrows */}
-              <button 
-                type="button" 
-                className="ecom-nav-btn prev-btn" 
-                onClick={prevHeroSlide} 
-                aria-label="Previous Slide"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-              </button>
+                <p className="botanical-hero-description">
+                  A lightweight, non-greasy scalp tonic powered by carefully selected botanicals to nourish your scalp and support healthier-looking hair.
+                </p>
 
-              <button 
-                type="button" 
-                className="ecom-nav-btn next-btn" 
-                onClick={nextHeroSlide} 
-                aria-label="Next Slide"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
+                {/* Four Compact Benefits */}
+                <div className="botanical-benefits-grid">
+                  <div className="benefit-pill">
+                    <span className="benefit-dot">✦</span>
+                    <span className="benefit-text">Lightweight &amp; Non-Greasy</span>
+                  </div>
+                  <div className="benefit-pill">
+                    <span className="benefit-dot">✦</span>
+                    <span className="benefit-text">Botanical Ingredients</span>
+                  </div>
+                  <div className="benefit-pill">
+                    <span className="benefit-dot">✦</span>
+                    <span className="benefit-text">Daily Scalp Care</span>
+                  </div>
+                  <div className="benefit-pill">
+                    <span className="benefit-dot">✦</span>
+                    <span className="benefit-text">Easy Application</span>
+                  </div>
+                </div>
 
-              {/* Dots Indicator */}
-              <div className="ecom-dots-container">
-                {HERO_SLIDES.map((_, idx) => (
+                {/* Primary & Secondary Action CTAs */}
+                <div className="botanical-cta-group">
                   <button
-                    key={idx}
                     type="button"
-                    className={`ecom-dot ${currentHeroSlide === idx ? 'active' : ''}`}
-                    onClick={() => setCurrentHeroSlide(idx)}
-                    aria-label={`Go to slide ${idx + 1}`}
+                    className="btn-botanical-primary"
+                    onClick={() => addToCart('sh-spray-150', 1)}
+                  >
+                    <span>Shop Scalp Tonic</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </button>
+
+                  <a href="#products" className="btn-botanical-secondary">
+                    Explore Our Formula
+                  </a>
+                </div>
+
+                {/* Verified Customer Rating & Reviews */}
+                <div className="botanical-social-proof">
+                  <div className="proof-stars" aria-label="5 out of 5 stars">
+                    {'★★★★★'}
+                  </div>
+                  <div className="proof-details">
+                    <span className="proof-score">4.9 / 5.0</span>
+                    <span className="proof-divider">•</span>
+                    <span className="proof-count">680 Verified Reviews</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Prominent Botanical Product Visual (Desktop & Tablet) */}
+              <div className="botanical-hero-visual hide-mobile-hero">
+                <div className="botanical-image-frame">
+                  <img 
+                    src="/images/sajad_spray.jpg" 
+                    alt="Sajad Hygam Follicle Scalp Tonic Spray with natural botanicals"
+                    className="botanical-product-image"
+                    loading="eager"
                   />
-                ))}
+                </div>
               </div>
-            </div>
 
-            {/* Quick Product Switcher Tabs (Desktop / Tablet) */}
-            <div className="ecom-slider-tabs">
-              {HERO_SLIDES.map((s, idx) => (
-                <button
-                  key={s.id || idx}
-                  type="button"
-                  className={`ecom-tab-pill ${currentHeroSlide === idx ? 'active' : ''}`}
-                  onClick={() => setCurrentHeroSlide(idx)}
-                >
-                  <span className="tab-num">0{idx + 1}</span>
-                  <span className="tab-label">
-                    {idx === 0 ? 'Complete 3-Step System' : idx === 1 ? 'Root Regrowth Elixir' : idx === 2 ? 'Follicle Scalp Tonic' : '14-Day Clinical Proof'}
-                  </span>
-                  <span className="tab-discount">{s.saveText.includes('OFF') ? s.saveText.split('(')[1]?.replace(')', '') || 'Deal' : 'Proven'}</span>
-                </button>
-              ))}
             </div>
-
-            {/* 4-Item E-Commerce Trust / USP Strip */}
-            <div className="ecom-usp-strip">
-              <div className="ecom-usp-item">
-                <div className="usp-icon-circle">🚚</div>
-                <div className="usp-text">
-                  <div className="usp-title">Free Express Shipping</div>
-                  <div className="usp-sub">Fast dispatch on ₹999+ orders</div>
-                </div>
-              </div>
-              <div className="ecom-usp-item">
-                <div className="usp-icon-circle">🌿</div>
-                <div className="usp-text">
-                  <div className="usp-title">100% Botanical Actives</div>
-                  <div className="usp-sub">Zero Minoxidil &amp; zero chemicals</div>
-                </div>
-              </div>
-              <div className="ecom-usp-item">
-                <div className="usp-icon-circle">⏱️</div>
-                <div className="usp-text">
-                  <div className="usp-title">14-Day Shedding Drop</div>
-                  <div className="usp-sub">94.2% report root strengthening</div>
-                </div>
-              </div>
-              <div className="ecom-usp-item">
-                <div className="usp-icon-circle">💬</div>
-                <div className="usp-text">
-                  <div className="usp-title">WhatsApp Consultation</div>
-                  <div className="usp-sub">Direct support with Sajad Hygam</div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </section>
 
