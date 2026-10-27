@@ -1028,13 +1028,17 @@ function ProductDetailContent() {
           </div>
 
           <div className="footer-bottom">
-            <div>© 2026 Sajad Hygam. All Rights Reserved. Botanical Trichology.</div>
-            <div className="footer-badges">
-              <span>🌿 100% Herbal</span>
-              <span>•</span>
-              <span>🐰 Cruelty-Free</span>
-              <span>•</span>
-              <span>🛡️ 60-Day Regrowth Guarantee</span>
+            <div>© 2026 Sajad Hygam. All Rights Reserved.</div>
+            <div className="footer-credits">
+              Designed &amp; Developed by{' '}
+              <a 
+                href="https://nexasite.in" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="credit-link"
+              >
+                NexaSite WebStudio
+              </a>
             </div>
           </div>
         </div>
